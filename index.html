@@ -6,34 +6,46 @@
 <title>VMoon Enterprises</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0F1B2D;
-    --navy-deep:#0A1220;
-    --moon:#E7ECF3;
-    --moonlight:#9FB4CE;
-    --silver:#C7D2E0;
-    --accent:#7FA8D9;
-    --line: rgba(231,236,243,0.14);
+    --void:#0A0817;
+    --deep:#150F2B;
+    --violet:#2B1A54;
+    --nebula:#6C3FC5;
+    --glow:#A780FF;
+    --glow-soft:#C9B3FF;
+    --moon:#F1EDFB;
+    --stardust:#B4A7D6;
+    --line: rgba(167,128,255,0.18);
     box-sizing:border-box;
     padding-top: env(safe-area-inset-top,0px);
     padding-bottom: env(safe-area-inset-bottom,0px);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top,0px);}
+  html{scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top,0px); height:100%;}
   body{
     margin:0;
-    background:var(--navy);
+    min-height:100%;
+    background:
+      radial-gradient(1.5px 1.5px at 12% 22%, rgba(255,255,255,0.55), transparent),
+      radial-gradient(1.5px 1.5px at 78% 8%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 45% 65%, rgba(255,255,255,0.45), transparent),
+      radial-gradient(1.5px 1.5px at 88% 42%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1px 1px at 25% 80%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 60% 30%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 8% 55%, rgba(255,255,255,0.35), transparent),
+      linear-gradient(180deg, var(--void) 0%, var(--deep) 45%, var(--violet) 100%);
+    background-attachment: fixed;
     color:var(--moon);
     font-family:'Inter',sans-serif;
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3{
     font-family:'Fraunces',serif;
     font-weight:500;
-    line-height:1.15;
+    line-height:1.12;
     margin:0;
   }
   a{color:inherit;}
@@ -42,8 +54,8 @@
   header.top{
     position:sticky; top:0;
     top: env(safe-area-inset-top,0px);
-    background:rgba(15,27,45,0.88);
-    backdrop-filter: blur(8px);
+    background:rgba(10,8,23,0.75);
+    backdrop-filter: blur(10px);
     border-bottom:1px solid var(--line);
     z-index:10;
   }
@@ -56,58 +68,66 @@
     font-size:1.15rem;
     letter-spacing:0.01em;
   }
-  .brand .dot{color:var(--accent);}
+  .brand .dot{color:var(--glow);}
   nav a{
-    color:var(--silver);
+    color:var(--stardust);
     text-decoration:none;
     font-size:0.92rem;
     margin-left:28px;
+    transition:color 0.2s;
   }
   nav a:hover{color:var(--moon);}
 
   .hero{
-    padding:110px 0 90px;
+    padding:130px 0 100px;
     position:relative;
     overflow:hidden;
   }
   .hero::before{
     content:"";
     position:absolute;
-    top:-120px; right:-160px;
-    width:420px; height:420px;
+    top:-220px; left:50%;
+    transform:translateX(-50%);
+    width:680px; height:680px;
     border-radius:50%;
-    background: radial-gradient(circle at 35% 35%, rgba(159,180,206,0.35), rgba(159,180,206,0.02) 70%);
-    filter: blur(2px);
+    background: radial-gradient(circle, rgba(167,128,255,0.35) 0%, rgba(108,63,197,0.14) 45%, transparent 72%);
+    filter: blur(4px);
+    pointer-events:none;
   }
   .hero .kicker{
-    color:var(--moonlight);
+    color:var(--glow-soft);
     font-size:0.95rem;
-    margin-bottom:18px;
+    margin-bottom:20px;
+    position:relative;
   }
   .hero h1{
-    font-size:clamp(2.3rem, 5vw, 3.4rem);
-    max-width:11ch;
+    font-size:clamp(2.5rem, 5.5vw, 3.8rem);
+    max-width:12ch;
     color:var(--moon);
+    position:relative;
+    text-shadow: 0 0 46px rgba(167,128,255,0.35);
   }
   .hero p.lead{
-    margin-top:26px;
+    margin-top:28px;
     max-width:52ch;
-    color:var(--silver);
-    font-size:1.08rem;
+    color:var(--stardust);
+    font-size:1.1rem;
+    position:relative;
   }
 
   section{
-    padding:64px 0;
+    padding:68px 0;
     border-top:1px solid var(--line);
+    position:relative;
   }
   section h2{
-    font-size:1.7rem;
+    font-size:1.8rem;
     color:var(--moon);
     max-width:20ch;
-    margin-bottom:22px;
+    margin-bottom:24px;
   }
   section p{
-    color:var(--silver);
+    color:var(--stardust);
     max-width:62ch;
   }
 
@@ -117,6 +137,14 @@
     flex-wrap:wrap;
   }
   .row .col{flex:1 1 240px;}
+  .row .col .mark{
+    display:inline-block;
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--glow);
+    box-shadow:0 0 12px 2px rgba(167,128,255,0.7);
+    margin-bottom:14px;
+  }
   .row .col h3{
     font-size:1.05rem;
     color:var(--moon);
@@ -125,46 +153,33 @@
   }
   .row .col p{font-size:0.95rem;}
 
+  .cta-line{
+    margin-top:36px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--glow-soft);
+    text-decoration:none;
+    font-size:0.98rem;
+    border-bottom:1px solid rgba(167,128,255,0.4);
+    padding-bottom:3px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .cta-line:hover{color:var(--moon); border-color:var(--glow);}
+
   footer{
     border-top:1px solid var(--line);
     padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));
-    color:var(--moonlight);
+    color:var(--stardust);
     font-size:0.88rem;
   }
-  footer a{color:var(--silver); text-decoration:underline;}
-
-  /* Privacy policy */
-  #privacy{background:var(--navy-deep);}
-  #privacy .updated{
-    color:var(--moonlight);
-    font-size:0.88rem;
-    margin-bottom:34px;
-  }
-  #privacy h3{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-size:1.2rem;
-    color:var(--moon);
-    margin:34px 0 12px;
-  }
-  #privacy p, #privacy li{
-    color:var(--silver);
-    max-width:66ch;
-    font-size:0.98rem;
-  }
-  #privacy ul{padding-left:20px; margin:10px 0;}
-  #privacy li{margin-bottom:6px;}
-
-  @media (prefers-color-scheme: light){
-    :root:not([data-theme="dark"]){
-      /* Design is intentionally dark-themed regardless of system preference */
-    }
-  }
+  footer a{color:var(--stardust); text-decoration:underline;}
+  footer a:hover{color:var(--moon);}
 
   @media (max-width:600px){
     nav a{margin-left:16px; font-size:0.85rem;}
-    .hero{padding:80px 0 60px;}
-    .row{gap:30px;}
+    .hero{padding:96px 0 70px;}
+    .row{gap:32px;}
   }
 </style>
 </head>
@@ -183,8 +198,8 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="kicker">A small studio building mobile apps</div>
-    <h1>We build focused apps, one category at a time.</h1>
+    <div class="kicker">A studio building mobile apps, under one sky</div>
+    <h1>Small apps, built with care, sent out into the world.</h1>
     <p class="lead">VMoon Enterprises designs and publishes mobile applications across a range of categories. Each app is built to do one job well — simple, fast, and respectful of your time and your data.</p>
   </div>
 </section>
@@ -194,22 +209,24 @@
     <h2>What we build</h2>
     <div class="row">
       <div class="col">
+        <span class="mark"></span>
         <h3>Many apps, one standard</h3>
-        <p>Our catalog spans different categories, from utilities to entertainment. Every app we ship follows the same principles: clear purpose, minimal permissions, and no dark patterns.</p>
+        <p>Our catalog spans different categories, from utilities to entertainment. Every app we ship follows the same principles: clear purpose, minimal permissions, no dark patterns.</p>
       </div>
       <div class="col">
+        <span class="mark"></span>
         <h3>Supported by ads, sometimes</h3>
-        <p>Some of our apps are free to use and supported by advertising. Where that's the case, we say so clearly in the app and in this policy.</p>
+        <p>Some of our apps are free to use and supported by advertising. Where that's the case, we say so clearly, both in the app and in our privacy policy.</p>
       </div>
       <div class="col">
+        <span class="mark"></span>
         <h3>One home for all of them</h3>
-        <p>This page serves as the shared privacy policy and contact point for every app published under VMoon Enterprises, so you always know who's behind the app you're using.</p>
+        <p>This page is the shared home for every app published under VMoon Enterprises, so you always know who's behind the app you're using.</p>
       </div>
     </div>
+    <a class="cta-line" href="privacy.html">Read our Privacy Policy</a>
   </div>
 </section>
-
-
 
 <footer id="contact">
   <div class="wrap">

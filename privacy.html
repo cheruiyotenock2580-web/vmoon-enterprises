@@ -6,34 +6,44 @@
 <title>Privacy Policy | VMoon Enterprises</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0F1B2D;
-    --navy-deep:#0A1220;
-    --moon:#E7ECF3;
-    --moonlight:#9FB4CE;
-    --silver:#C7D2E0;
-    --accent:#7FA8D9;
-    --line: rgba(231,236,243,0.14);
+    --void:#0A0817;
+    --deep:#150F2B;
+    --violet:#2B1A54;
+    --nebula:#6C3FC5;
+    --glow:#A780FF;
+    --glow-soft:#C9B3FF;
+    --moon:#F1EDFB;
+    --stardust:#B4A7D6;
+    --line: rgba(167,128,255,0.18);
     box-sizing:border-box;
     padding-top: env(safe-area-inset-top,0px);
     padding-bottom: env(safe-area-inset-bottom,0px);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top,0px);}
+  html{scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top,0px); height:100%;}
   body{
     margin:0;
-    background:var(--navy-deep);
+    min-height:100%;
+    background:
+      radial-gradient(1.5px 1.5px at 15% 18%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 70% 12%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 88% 55%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1px 1px at 30% 75%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 55% 40%, rgba(255,255,255,0.3), transparent),
+      linear-gradient(180deg, var(--void) 0%, var(--deep) 55%, var(--violet) 100%);
+    background-attachment: fixed;
     color:var(--moon);
     font-family:'Inter',sans-serif;
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3{
     font-family:'Fraunces',serif;
     font-weight:500;
-    line-height:1.15;
+    line-height:1.14;
     margin:0;
   }
   a{color:inherit;}
@@ -42,8 +52,8 @@
   header.top{
     position:sticky; top:0;
     top: env(safe-area-inset-top,0px);
-    background:rgba(15,27,45,0.92);
-    backdrop-filter: blur(8px);
+    background:rgba(10,8,23,0.8);
+    backdrop-filter: blur(10px);
     border-bottom:1px solid var(--line);
     z-index:10;
   }
@@ -57,49 +67,65 @@
     letter-spacing:0.01em;
     text-decoration:none;
   }
-  .brand .dot{color:var(--accent);}
+  .brand .dot{color:var(--glow);}
   nav a{
-    color:var(--silver);
+    color:var(--stardust);
     text-decoration:none;
     font-size:0.92rem;
     margin-left:28px;
+    transition:color 0.2s;
   }
   nav a:hover{color:var(--moon);}
 
-  main{padding:64px 0 90px;}
-  main .wrap > h2{
-    font-size:2rem;
+  main{padding:70px 0 100px; position:relative;}
+  main::before{
+    content:"";
+    position:absolute;
+    top:-140px; left:50%;
+    transform:translateX(-50%);
+    width:560px; height:560px;
+    border-radius:50%;
+    background: radial-gradient(circle, rgba(167,128,255,0.28) 0%, rgba(108,63,197,0.1) 45%, transparent 72%);
+    filter: blur(4px);
+    pointer-events:none;
+    z-index:0;
+  }
+  main .wrap{position:relative; z-index:1;}
+  main .wrap > h1{
+    font-size:clamp(2rem, 4vw, 2.6rem);
     color:var(--moon);
-    margin-bottom:6px;
+    margin-bottom:8px;
+    text-shadow: 0 0 40px rgba(167,128,255,0.3);
   }
 
-  #privacy .updated{
-    color:var(--moonlight);
+  .updated{
+    color:var(--stardust);
     font-size:0.88rem;
-    margin-bottom:34px;
+    margin-bottom:38px;
   }
-  #privacy h3{
-    font-family:'Fraunces',serif;
+  h2.section-title{
+    font-size:1.22rem;
+    color:var(--glow-soft);
+    margin:38px 0 12px;
     font-weight:500;
-    font-size:1.2rem;
-    color:var(--moon);
-    margin:34px 0 12px;
   }
-  #privacy p, #privacy li{
-    color:var(--silver);
+  p, li{
+    color:var(--stardust);
     max-width:66ch;
     font-size:0.98rem;
   }
-  #privacy ul{padding-left:20px; margin:10px 0;}
-  #privacy li{margin-bottom:6px;}
+  strong{color:var(--moon); font-weight:600;}
+  ul{padding-left:20px; margin:10px 0;}
+  li{margin-bottom:6px;}
 
   footer{
     border-top:1px solid var(--line);
     padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));
-    color:var(--moonlight);
+    color:var(--stardust);
     font-size:0.88rem;
   }
-  footer a{color:var(--silver); text-decoration:underline;}
+  footer a{color:var(--stardust); text-decoration:underline;}
+  footer a:hover{color:var(--moon);}
 
   @media (max-width:600px){
     nav a{margin-left:16px; font-size:0.85rem;}
@@ -120,12 +146,12 @@
 
 <main>
   <div class="wrap">
-    <h2>Privacy Policy</h2>
+    <h1>Privacy Policy</h1>
     <p class="updated">Last updated: September 25, 2026</p>
 
     <p>This Privacy Policy describes how VMoon Enterprises ("we", "us", "our") handles information in connection with the mobile applications we publish (each, an "App"). This policy applies to all current and future Apps published under the VMoon Enterprises developer account, unless a specific App provides its own separate policy.</p>
 
-    <h3>Information we may collect</h3>
+    <h2 class="section-title">Information we may collect</h2>
     <p>Because our Apps span different categories, not every App collects the same information. Depending on the App, we may collect:</p>
     <ul>
       <li><strong>Device and usage information</strong> — device model, operating system version, language, general usage statistics, and crash or diagnostic logs, used to keep the App working correctly.</li>
@@ -136,7 +162,7 @@
     </ul>
     <p>An individual App will only request the specific permissions (such as location, camera, or storage) that it actually needs to function, and will ask you directly at the time it needs them.</p>
 
-    <h3>How we use information</h3>
+    <h2 class="section-title">How we use information</h2>
     <ul>
       <li>To operate, maintain, and improve our Apps</li>
       <li>To display and measure advertising, in Apps that include ads</li>
@@ -145,27 +171,26 @@
       <li>To meet legal obligations</li>
     </ul>
 
-    <h3>Advertising and third-party services</h3>
+    <h2 class="section-title">Advertising and third-party services</h2>
     <p>Some of our Apps display ads served by third-party advertising networks (for example, Google AdMob). These networks may collect and use advertising identifiers and device information, under their own privacy policies, to show ads relevant to you and measure ad performance. We may also use third-party analytics and crash-reporting tools to understand how our Apps are used and to fix problems. We do not sell your personal information.</p>
 
-    <h3>Data sharing</h3>
+    <h2 class="section-title">Data sharing</h2>
     <p>We do not share your personal information with third parties except: with service providers who help us run our Apps (such as ad networks, analytics providers, and cloud hosting), when required by law, or with your consent.</p>
 
-    <h3>Data retention</h3>
+    <h2 class="section-title">Data retention</h2>
     <p>We retain information only for as long as needed for the purposes described in this policy, or as required by law.</p>
 
-    <h3>Children's privacy</h3>
+    <h2 class="section-title">Children's privacy</h2>
     <p>Our Apps are not directed at children under 13, unless a specific App is clearly designed for a general or family audience and states otherwise, in which case we comply with applicable children's privacy laws, such as COPPA, including restricting behavioral advertising to children where required.</p>
 
-    <h3>Your choices</h3>
+    <h2 class="section-title">Your choices</h2>
     <p>You can reset or limit your device's advertising identifier in your device settings, control app permissions at any time from your device's settings, and contact us to ask what information we hold about you or to request its deletion, where applicable.</p>
 
-    <h3>Changes to this policy</h3>
+    <h2 class="section-title">Changes to this policy</h2>
     <p>We may update this Privacy Policy as we publish new Apps or as our practices change. We will update the "Last updated" date above when we do.</p>
 
-    <h3>Contact us</h3>
-    <p>If you have questions about this Privacy Policy or any of our Apps, contact us at <a href="mailto:support@vmoonenterprises.online">support@vmoonenterprises.online</a>.</p>
-  
+    <h2 class="section-title">Contact us</h2>
+    <p>If you have questions about this Privacy Policy or any of our Apps, contact us at <a href="mailto:support@vmoonenterprises.online" style="color:var(--glow-soft); text-decoration:underline;">support@vmoonenterprises.online</a>.</p>
   </div>
 </main>
 
